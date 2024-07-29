@@ -9,5 +9,6 @@ const connectionString = process.env.DATABASE_URL
 
 export const db = new Pool({
   allowExitOnIdle: true,
-  connectionString
+  connectionString,
+  ssl: true
 })
