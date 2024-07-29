@@ -1,8 +1,11 @@
 import pg from 'pg'
+import { config } from 'dotenv'
+
+config()
 
 const { Pool } = pg
 
-const connectionString = 'postgresql://postgres:admin@localhost:5432/booksdb'
+const connectionString = process.env.DATABASE_URL
 
 export const db = new Pool({
   allowExitOnIdle: true,
